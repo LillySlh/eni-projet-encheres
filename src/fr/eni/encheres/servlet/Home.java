@@ -1,4 +1,4 @@
-package servlet;
+package fr.eni.encheres.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class addUser
+ * Servlet implementation class home
  */
-@WebServlet("/servlet/ServletAddUser")
-public class ServletAddUser extends HttpServlet {
+@WebServlet("/servlet/Home")
+public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletAddUser() {
+    public Home() {
         super();
         // TODO Auto-generated constructor stub
     }

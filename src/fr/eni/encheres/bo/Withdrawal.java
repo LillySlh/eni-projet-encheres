@@ -1,4 +1,5 @@
-package models.bo;
+package fr.eni.encheres.bo;
+
 
 public class Withdrawal {
 

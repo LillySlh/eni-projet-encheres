@@ -1,4 +1,4 @@
-package servlet;
+package fr.eni.encheres.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
