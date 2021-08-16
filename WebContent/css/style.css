@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+
+h1 {
+	text-align : left;
+	font-size : 25px;
+	padding-left : 15px;
+	font-family: sans-serif;
+	font:bold;
+}
+
+h2 {
+	text-align : center;
+	font-size : 25px;
+	padding : 15px;
+	font-family: sans-serif;
+	font:bold;
+}
+
+a {
+	font-family: sans-serif;
+}
+
+nav {
+	
+	display: flex;
+	float: right;
+	
+}
+
+.inscription{
+	column-count: 2;
+	padding-bottom: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 800px;
+}
+
+.inscription1 {
+	padding-right: 30px;
+}
+
+.tr-form {
+	padding-bottom: 10px;
+}
+
+input{
+	width: 150px;
+	padding: 4px;
+	vertical-align: middle;
+}
+
+label {
+	display: inline-block;
+	width: 110px;
+	margin-right: 20px;
+	vertical-align: middle;
+	text-align: right;
+	font-family: sans-serif;
+}
+
+.tr-button {
+	column-count: 2;
+	margin: 0 auto;
+	width: 400px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.profil-button {
+	padding-bottom: 20px;
+	padding-right: 50px;
+}
+
