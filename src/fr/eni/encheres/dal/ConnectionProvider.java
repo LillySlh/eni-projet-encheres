@@ -26,8 +26,10 @@ public class ConnectionProvider {
     }
     
     /**
+     * Cette méthode retourne une connection opérationnelle issue du pool de connexion
+     * vers la base de données.
      * @return Connection
-     * @throws SQLException If something went wrong with the context (not found, wrong values)
+     * @throws SQLException
      */
     public static Connection getConnection() throws SQLException
     {

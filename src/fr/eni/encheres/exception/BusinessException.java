@@ -35,10 +35,11 @@ public class BusinessException extends Exception {
 	{
 		return this.listeCodesErreur.size()>0;
 	}
-	
+
 	public List<Integer> getListeCodesErreur()
 	{
 		return this.listeCodesErreur;
 	}
+
 
 }

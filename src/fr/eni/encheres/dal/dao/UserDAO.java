@@ -6,12 +6,9 @@ import fr.eni.encheres.exception.BusinessException;
 
 public interface UserDAO {
 	/**
+	 * En cas d'erreur, le code d'erreur est enregistré dans l'objet businessException.
 	 * @param user
 	 * @throws BusinessException
-	 * @throws Exception 
 	 */
 	public void insert(User user) throws BusinessException;
-	public void update(User user) throws BusinessException;
-	public void delete(User user) throws BusinessException;
-
 }

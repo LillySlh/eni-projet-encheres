@@ -1,8 +1,9 @@
 package fr.eni.encheres.bo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SoldItem {
+public class SoldItem  implements Serializable {
 
     private int noArticle;
     private String nomArticle;

@@ -1,7 +1,9 @@
 package fr.eni.encheres.bo;
 
 
-public class Withdrawal {
+import java.io.Serializable;
+
+public class Withdrawal implements Serializable {
 
     private int noArticle;
     private String rue;
