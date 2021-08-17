@@ -24,9 +24,12 @@ public class UserEm {
 		this.userDAO= DAOFactory.getUserDAO();
 	}
 	
-	 public User createUser(User user) throws BusinessException  {
+	 public User createUser(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse, int credit, boolean administrateur) throws BusinessException
+	 {
 
 		 BusinessException exception = new BusinessException();
+
+		 User user = new User(noUtilisateur, pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit, administrateur);
 
 		 if(!exception.hasErreurs())
 		 {

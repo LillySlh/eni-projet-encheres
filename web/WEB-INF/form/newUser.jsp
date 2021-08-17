@@ -72,9 +72,7 @@
 
 		<div class="tr-button">
 			<div class="profil-button">
-				<a href="servlet/Home" target="_blank">
 				<input type="submit" value="Créer">
-				</a>>
 			</div>
 			<div class="profil-button">
 				<input type="button" value="Annuler" onclick="window.location.href = '${pageContext.request.contextPath}/../../../../eni_projet_encheres_war_exploded'">

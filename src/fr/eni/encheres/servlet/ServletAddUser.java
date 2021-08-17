@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -43,6 +41,7 @@ public class ServletAddUser extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int noUtilisateur;
 		String pseudo;
 		String nom;
 		String prenom;
@@ -52,9 +51,12 @@ public class ServletAddUser extends HttpServlet {
 		String codePostal;
 		String ville;
 		String motDePasse;
+		int credit;
+		boolean administrateur;
 
 		try
 		{
+			noUtilisateur = Integer.parseInt(request.getParameter("noUtilisateur"));
 			pseudo = request.getParameter("pseudo");
 			nom = request.getParameter("nom");
 			prenom = request.getParameter("prenom");
@@ -64,21 +66,23 @@ public class ServletAddUser extends HttpServlet {
 			codePostal = request.getParameter("codePostal");
 			ville = request.getParameter("ville");
 			motDePasse = request.getParameter("motDePasse");
+			credit = 0;
+			administrateur = false;
 
 			UserEm userEm = new UserEm();
-			User user = userEm.createUser(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
+			User user = userEm.createUser(noUtilisateur, pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit, administrateur);
 			request.setAttribute("user", user);
 		}
 		catch(NumberFormatException e)
 		{
-			List<Integer> listeCodesErreur = new ArrayList<>();
+			/*List<Integer> listeCodesErreur = new ArrayList<>();
 			listeCodesErreur.add(CodesResultatServlets.FORMAT_AVIS_NOTE_ERREUR);
-			request.setAttribute("listeCodesErreur",listeCodesErreur);
+			request.setAttribute("listeCodesErreur",listeCodesErreur);*/
 		}  catch (BusinessException e) {
-			request.setAttribute("listeCodesErreur", e.getListeCodesErreur());
+			/*request.setAttribute("listeCodesErreur", e.getListeCodesErreur());*/
 		}
 
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/form/newUser.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/home.jsp");
 		rd.forward(request, response);
 	}
 

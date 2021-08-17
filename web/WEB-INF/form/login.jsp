@@ -17,9 +17,7 @@
 			<label for="mdp">Mot de passe : </label>
 			<input type="password" name="motDePasse" id="mdp" required>
 			<br>
-			<a href="servlet/Home" target="_blank">
 			<input type="submit" value="Connexion">
-			</a>
 			<label>
 				<input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
 			</label>
