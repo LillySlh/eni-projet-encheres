@@ -1,8 +1,9 @@
 package fr.eni.encheres.bo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Auction {
+public class Auction implements Serializable {
 
     private int noUtilisateur;
     private int noArticle;

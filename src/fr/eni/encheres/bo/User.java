@@ -1,7 +1,10 @@
 package fr.eni.encheres.bo;
 
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private int     noUtilisateur;
     private String  pseudo;
@@ -22,6 +25,22 @@ public class User {
 
     public User(String pseudo, String nom,String prenom, String email, String telephone,
     		String rue,String codePostal, String ville,String motDePasse,int credit,boolean administrateur) {
+        this.pseudo = pseudo;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.telephone = telephone;
+        this.rue = rue;
+        this.codePostal = codePostal;
+        this.ville = ville;
+        this.motDePasse = motDePasse;
+        this.credit = credit;
+        this.administrateur = administrateur;
+    }
+
+    public User(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse,
+             int credit, boolean administrateur) {
+        this.noUtilisateur = noUtilisateur;
         this.pseudo = pseudo;
         this.nom = nom;
         this.prenom = prenom;
