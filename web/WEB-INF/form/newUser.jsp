@@ -14,23 +14,23 @@
 		<div class="inscription1">
 			<div class="tr-form">
 				<label for="pseudo">Pseudo :</label>
-				<input type="text" name="pseudo" class="input-form" required>
+				<input type="text" name="pseudo" id="pseudo" required>
 			</div>
 			<div class="tr-form">
 				<label for="prenom">Prénom :</label>
-				<input type="text" name="prenom" class="input-form" required>
+				<input type="text" name="prenom" id="prenom" required>
 			</div>
 			<div class="tr-form">
 				<label for="tel">Téléphone :</label>
-				<input type="text" name="telephone" class="input-form" required>
+				<input type="text" name="telephone" id="tel" required>
 			</div>
 			<div class="tr-form">
 				<label for="cp">Code postal :</label>
-				<input type="text" name="code postal" class="input-form" required>
+				<input type="text" name="codePostal" id="cp" required>
 			</div>
 			<div class="tr-form">
 				<label for="mdp">Mot de passe :</label>
-				<input type="text" name="mot de passe" class="input-form" required>
+				<input type="password" name="motDePasse" id="mdp" required>
 			</div>
 		</div>
 		<div class="inscription2">
@@ -52,17 +52,34 @@
 			</div>
 			<div class="tr-form">
 				<label for="confirmation">Confirmation :</label>
-				<input type="text" name="confirmation" id="confirmation" required>
+				<input type="password" name="confirmation" id="confirmation" required>
+			</div>
+		</div>
+		<script>
+			var mdp = document.getElementById("mdp")
+				, confirmation = document.getElementById("confirmation");
+
+			function validatePassword(){
+				if(mdp.value != confirmation.value) {
+					confirmation.setCustomValidity("Mot de passe différent");
+				} else {
+					confirmation.setCustomValidity('');
+				}
+			}
+			mdp.onchange = validatePassword;
+			confirmation.onkeyup = validatePassword;
+		</script>
+
+		<div class="tr-button">
+			<div class="profil-button">
+				<a href="servlet/Home">
+				<input type="submit" value="Créer">
+				</a>
+			</div>
+			<div class="profil-button">
+				<input type="button" value="Annuler" onclick="window.location.href = '${pageContext.request.contextPath}/../../../../eni_projet_encheres_war_exploded'">
 			</div>
 		</div>
 	</form>
-	<div class="tr-button">
-  		<div class="profil-button">
-    		<input type="submit" value="Créer" href="servlet/listeencheres">
- 		</div>
- 		<div class="profil-button">
-    		<input type="button" value="Annuler" onclick="window.location.href = '${pageContext.request.contextPath}/../../eni-projet-encheres'">
- 		</div>
- 	</div>
 </body>
 </html>
