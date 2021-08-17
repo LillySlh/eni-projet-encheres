@@ -11,13 +11,13 @@
 	<%@include file="../fragments/entete.jspf" %>
 	<form action="" method="post">
 		<div class="container">
-			<label for="uname">Identifiant : </label>
-			<input type="text" name="uname" required>
+			<label for="pseudo">Identifiant : </label>
+			<input type="text" name="pseudo" id="pseudo"required>
 			<br>
-			<label for="psw">Mot de passe : </label>
-			<input type="password" name="psw" required>
+			<label for="mdp">Mot de passe : </label>
+			<input type="password" name="motDePasse" id="mdp" required>
 			<br>
-			<a href="servlet/#">
+			<a href="servlet/Home">
 			<input type="submit" value="Connexion">
 			</a>
 			<label>

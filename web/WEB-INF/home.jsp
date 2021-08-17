@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <title>Accueil</title>
 </head>
 <body>
 	<%@include file="fragments/entete.jspf" %>
-
+	<h2>Liste des enchères</h2>
 </body>
 </html>
