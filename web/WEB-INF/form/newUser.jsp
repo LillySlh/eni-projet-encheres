@@ -56,11 +56,11 @@
 			</div>
 		</div>
 		<script>
-			var mdp = document.getElementById("mdp")
+			let mdp = document.getElementById("mdp")
 				, confirmation = document.getElementById("confirmation");
 
 			function validatePassword(){
-				if(mdp.value != confirmation.value) {
+				if(mdp.value !== confirmation.value) {
 					confirmation.setCustomValidity("Mot de passe différent");
 				} else {
 					confirmation.setCustomValidity('');

@@ -3,14 +3,13 @@ package fr.eni.encheres.dal.dao;
 import fr.eni.encheres.bo.Auction;
 import fr.eni.encheres.exception.BusinessException;
 
-public interface UserDAO {
+public interface AuctionDAO {
     /**
-     * @param user
+     * @param auction
      * @throws BusinessException
      * @throws Exception
      */
     public void insert(Auction auction) throws BusinessException;
-    public void update(Auction auction) throws BusinessException;
-    public void delete(Auction auction) throws BusinessException;
+
 
 }
