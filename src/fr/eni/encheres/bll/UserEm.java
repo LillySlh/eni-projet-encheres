@@ -4,10 +4,11 @@ import fr.eni.encheres.bo.User;
 import fr.eni.encheres.dal.dao.UserDAO;
 import fr.eni.encheres.exception.BusinessException;
 
+
 public class UserEm {
 	private static UserDAO dao;
 	
-	 public void createUser(User user) throws BusinessException  {
+	 public void createUser(User user) throws BusinessException {
 	            dao.insert(user);
 	 }
 	 
@@ -19,7 +20,5 @@ public class UserEm {
          dao.delete(user);
 
 	 }
-	 
-	 
-	 
+
 }

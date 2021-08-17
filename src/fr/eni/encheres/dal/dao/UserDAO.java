@@ -1,5 +1,6 @@
 package fr.eni.encheres.dal.dao;
 
+
 import fr.eni.encheres.bo.User;
 import fr.eni.encheres.exception.BusinessException;
 
