@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../../WebContent/css/style.css">
 <title>Nouveau profil</title>
 </head>
 <body>
@@ -61,7 +61,7 @@
     		<input type="submit" value="Créer" href="servlet/listeencheres">
  		</div>
  		<div class="profil-button">
-    		<input type="button" value="Annuler" onclick="window.location.href = '${pageContext.request.contextPath}/../../eni-projet-encheres'">
+    		<input type="button" value="Annuler" onclick="window.location.href = '../../../../eni-projet-encheres'">
  		</div>
  	</div>
 </body>
