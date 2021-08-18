@@ -21,26 +21,22 @@ public class UserEm {
 	 */
 
 	public UserEm() {
-		this.userDAO= DAOFactory.getUserDAO();
+		userDAO= DAOFactory.getUserDAO();
 	}
 	
-	 public User createUser(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse, int credit, boolean administrateur) throws BusinessException
-	 {
+	 public void createUser(User user) throws BusinessException  {
 
 		 BusinessException exception = new BusinessException();
 
-		 User user = new User(noUtilisateur, pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit, administrateur);
-
 		 if(!exception.hasErreurs())
 		 {
-			 this.userDAO.insert(user);
+			 userDAO.insert(user);
 		 }
 
 		 if(exception.hasErreurs())
 		 {
 			 throw exception;
 		 }
-		 return user;
 	 }
 
 

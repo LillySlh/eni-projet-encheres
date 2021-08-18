@@ -1,17 +1,17 @@
 package fr.eni.encheres.servlet;
 
 
-import fr.eni.encheres.bll.UserEm;
-import fr.eni.encheres.bo.User;
-import fr.eni.encheres.exception.BusinessException;
-
-import javax.servlet.RequestDispatcher;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+import fr.eni.encheres.bll.UserEm;
+import fr.eni.encheres.bo.User;
+import fr.eni.encheres.exception.BusinessException;
 
 
 /**
@@ -33,57 +33,39 @@ public class ServletAddUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/form/newUser.jsp");
-		rd.forward(request, response);
+
+		this.getServletContext().getRequestDispatcher("/WEB-INF/form/newUser.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int noUtilisateur;
-		String pseudo;
-		String nom;
-		String prenom;
-		String email;
-		String telephone;
-		String rue;
-		String codePostal;
-		String ville;
-		String motDePasse;
-		int credit;
-		boolean administrateur;
+		// TODO Auto-generated method stub
 
-		try
-		{
-			noUtilisateur = Integer.parseInt(request.getParameter("noUtilisateur"));
-			pseudo = request.getParameter("pseudo");
-			nom = request.getParameter("nom");
-			prenom = request.getParameter("prenom");
-			email = request.getParameter("email");
-			telephone = request.getParameter("telephone");
-			rue = request.getParameter("rue");
-			codePostal = request.getParameter("codePostal");
-			ville = request.getParameter("ville");
-			motDePasse = request.getParameter("motDePasse");
-			credit = (0);
-			administrateur = (true);
+		User utilisateur = new User();
+		utilisateur.setNom(request.getParameter("nom"));
+		utilisateur.setAdministrateur(true);
+		utilisateur.setCodePostal(request.getParameter("codePostal"));
+		utilisateur.setCredit(16);
+		utilisateur.setEmail(request.getParameter("email"));
+		utilisateur.setPrenom(request.getParameter("nom"));
+		utilisateur.setNom(request.getParameter("prenom"));
+		utilisateur.setMotDePasse(request.getParameter("motDePasse"));
+		utilisateur.setRue(request.getParameter("rue"));
+		utilisateur.setVille(request.getParameter("ville"));
+		utilisateur.setTelephone("0240515555");
+		utilisateur.setPseudo(request.getParameter("pseudo"));
 
-			UserEm userEm = new UserEm();
-			User user = userEm.createUser(noUtilisateur, pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit, administrateur);
-			request.setAttribute("user", user);
-		}
-		catch(NumberFormatException e)
-		{
-			/*List<Integer> listeCodesErreur = new ArrayList<>();
-			listeCodesErreur.add(CodesResultatServlets.FORMAT_AVIS_NOTE_ERREUR);
-			request.setAttribute("listeCodesErreur",listeCodesErreur);*/
-		}  catch (BusinessException e) {
-			/*request.setAttribute("listeCodesErreur", e.getListeCodesErreur());*/
+		UserEm userEm = new UserEm();
+		 try {
+			userEm.createUser(utilisateur);
+		} catch (BusinessException e) {
+			e.printStackTrace();
 		}
 
-		RequestDispatcher rd = request.getRequestDispatcher("/servlet/Home");
-		rd.forward(request, response);
+		System.out.print(utilisateur+" Objet User ");
+		doGet(request, response);
 	}
 
 }
