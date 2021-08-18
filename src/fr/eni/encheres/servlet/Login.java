@@ -27,9 +27,26 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*String pseudo = request.getParameter("pseudo");
-		String motDePasse = request.getParameter("motDePasse");*/
-		//TODO
+
+		/*response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+
+		String pseudo = request.getParameter("lilly");
+		String motDePasse = request.getParameter("123");
+
+		if(LoginDao.validate(pseudo, motDePasse)){
+			RequestDispatcher rd=request.getRequestDispatcher("servlet2");
+			rd.forward(request,response);
+		}
+		else{
+			out.print("Désolé l'identifiant et/ou le mot de passe est incorrect");
+			RequestDispatcher rd=request.getRequestDispatcher("/servlet/Login");
+			rd.include(request,response);
+		}
+
+		out.close();*/
+		RequestDispatcher rd=request.getRequestDispatcher("/servlet/Login");
+		rd.include(request,response);
 	}
 
 }

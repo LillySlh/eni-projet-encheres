@@ -1,15 +1,15 @@
 package fr.eni.encheres.dal.jdbc;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import fr.eni.encheres.bo.User;
 import fr.eni.encheres.dal.CodesResultatDAL;
 import fr.eni.encheres.dal.ConnectionProvider;
 import fr.eni.encheres.dal.dao.UserDAO;
 import fr.eni.encheres.exception.BusinessException;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class UserJdbc implements UserDAO {
 

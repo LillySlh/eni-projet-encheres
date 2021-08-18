@@ -66,8 +66,8 @@ public class ServletAddUser extends HttpServlet {
 			codePostal = request.getParameter("codePostal");
 			ville = request.getParameter("ville");
 			motDePasse = request.getParameter("motDePasse");
-			credit = 0;
-			administrateur = false;
+			credit = (0);
+			administrateur = (true);
 
 			UserEm userEm = new UserEm();
 			User user = userEm.createUser(noUtilisateur, pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit, administrateur);
@@ -82,7 +82,7 @@ public class ServletAddUser extends HttpServlet {
 			/*request.setAttribute("listeCodesErreur", e.getListeCodesErreur());*/
 		}
 
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/home.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/servlet/Home");
 		rd.forward(request, response);
 	}
 
