@@ -1,5 +1,9 @@
 package fr.eni.encheres.servlet;
 
+import fr.eni.encheres.bll.UserEm;
+import fr.eni.encheres.bo.User;
+import fr.eni.encheres.exception.BusinessException;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +22,10 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
 		this.getServletContext().getRequestDispatcher("/WEB-INF/form/login.jsp").forward(request, response);
+
 	}
 
 	/**
@@ -27,6 +34,7 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pseudo = request.getParameter("pseudo");
 		String motDePasse = request.getParameter("motDePasse");
+
 		//TODO
 	}
 

@@ -13,7 +13,7 @@ import fr.eni.encheres.exception.BusinessException;
 
 public class UserJdbc implements UserDAO {
 
-	private static final String INSERT="INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+	private static final String INSERT="INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	
 	@Override
 	public void insert(User user) throws BusinessException {
@@ -28,6 +28,7 @@ public class UserJdbc implements UserDAO {
 
 		try(Connection cnx = ConnectionProvider.getConnection())
 		{
+			System.out.println("coucou");
 			PreparedStatement pstmt = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			pstmt.setString(1, user.getPseudo());
 			pstmt.setString(2, user.getNom());
@@ -49,15 +50,14 @@ public class UserJdbc implements UserDAO {
 				user.setNoUtilisateur(rs.getInt(1));
 			}
 
-			System.out.print("çaaaaa marche  ptain");
+			System.out.print("OUI");
 
 
 		}
 		catch(SQLException e)
 		{
-			System.out.print("çaaaaa marche  po");
+			System.out.print("NOpe" +" "+ e);
 			e.printStackTrace();
-
 		}
 	}
 

@@ -21,23 +21,22 @@ public class UserEm {
 	 */
 
 	public UserEm() {
-		this.userDAO= DAOFactory.getUserDAO();
+		userDAO= DAOFactory.getUserDAO();
 	}
 	
-	 public User createUser(User user) throws BusinessException  {
+	 public void createUser(User user) throws BusinessException  {
 
 		 BusinessException exception = new BusinessException();
 
 		 if(!exception.hasErreurs())
 		 {
-			 this.userDAO.insert(user);
+			 userDAO.insert(user);
 		 }
 
 		 if(exception.hasErreurs())
 		 {
 			 throw exception;
 		 }
-		 return user;
 	 }
 
 

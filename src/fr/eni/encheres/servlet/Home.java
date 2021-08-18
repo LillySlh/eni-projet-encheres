@@ -1,5 +1,9 @@
 package fr.eni.encheres.servlet;
 
+import fr.eni.encheres.bll.UserEm;
+import fr.eni.encheres.bo.User;
+import fr.eni.encheres.exception.BusinessException;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,6 +30,7 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 	}
 
