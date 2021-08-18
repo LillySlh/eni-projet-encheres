@@ -1,17 +1,16 @@
 package fr.eni.encheres.servlet;
 
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import fr.eni.encheres.bll.UserEm;
+import fr.eni.encheres.bo.User;
+import fr.eni.encheres.exception.BusinessException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import fr.eni.encheres.bll.UserEm;
-import fr.eni.encheres.bo.User;
-import fr.eni.encheres.exception.BusinessException;
+import java.io.IOException;
 
 
 /**
@@ -44,18 +43,17 @@ public class ServletAddUser extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		User utilisateur = new User();
-		utilisateur.setNom(request.getParameter("nom"));
-		utilisateur.setAdministrateur(true);
-		utilisateur.setCodePostal(request.getParameter("codePostal"));
-		utilisateur.setCredit(16);
-		utilisateur.setEmail(request.getParameter("email"));
-		utilisateur.setPrenom(request.getParameter("nom"));
-		utilisateur.setNom(request.getParameter("prenom"));
-		utilisateur.setMotDePasse(request.getParameter("motDePasse"));
-		utilisateur.setRue(request.getParameter("rue"));
-		utilisateur.setVille(request.getParameter("ville"));
-		utilisateur.setTelephone("0240515555");
 		utilisateur.setPseudo(request.getParameter("pseudo"));
+		utilisateur.setNom(request.getParameter("nom"));
+		utilisateur.setPrenom(request.getParameter("prenom"));
+		utilisateur.setEmail(request.getParameter("email"));
+		utilisateur.setTelephone("0240515555");
+		utilisateur.setRue(request.getParameter("rue"));
+		utilisateur.setCodePostal(request.getParameter("codePostal"));
+		utilisateur.setVille(request.getParameter("ville"));
+		utilisateur.setMotDePasse(request.getParameter("motDePasse"));
+		utilisateur.setCredit(16);
+		utilisateur.setAdministrateur(true);
 
 		UserEm userEm = new UserEm();
 		 try {
