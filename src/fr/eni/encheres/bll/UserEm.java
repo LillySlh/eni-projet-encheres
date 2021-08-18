@@ -27,7 +27,8 @@ public class UserEm {
 	 public void createUser(User user) throws BusinessException  {
 
 		 BusinessException exception = new BusinessException();
-		 if (userDAO.checkIsValid(user.getPseudo(), user.getEmail())) {
+		 if (userDAO.checkIsValid(user.getPseudo(), user.getEmail()))
+		 {
 			 userDAO.insert(user);
 		 }
 		 if(exception.hasErreurs())

@@ -1,5 +1,6 @@
 package fr.eni.encheres.dal.dao;
 
+import fr.eni.encheres.dal.jdbc.SoldeItemJdbc;
 import fr.eni.encheres.dal.jdbc.UserJdbc;
 
 public abstract class DAOFactory {
@@ -8,4 +9,9 @@ public abstract class DAOFactory {
     {
         return new UserJdbc();
     }
+    public static SoldItemDAO getSoldItemDAO() {
+
+        return new SoldeItemJdbc();
+    }
+
 }

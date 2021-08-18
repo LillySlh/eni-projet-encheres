@@ -51,10 +51,6 @@ public class UserJdbc implements UserDAO {
 			{
 				user.setNoUtilisateur(rs.getInt(1));
 			}
-
-			System.out.print("OUI");
-
-
 		}
 		catch(SQLException e)
 		{
