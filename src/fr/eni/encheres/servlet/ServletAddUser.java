@@ -44,17 +44,17 @@ public class ServletAddUser extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		User utilisateur = new User();
+
 		utilisateur.setNom(request.getParameter("nom"));
 		utilisateur.setAdministrateur(true);
 		utilisateur.setCodePostal(request.getParameter("codePostal"));
 		utilisateur.setCredit(16);
 		utilisateur.setEmail(request.getParameter("email"));
-		utilisateur.setPrenom(request.getParameter("nom"));
-		utilisateur.setNom(request.getParameter("prenom"));
+		utilisateur.setPrenom(request.getParameter("prenom"));
 		utilisateur.setMotDePasse(request.getParameter("motDePasse"));
 		utilisateur.setRue(request.getParameter("rue"));
 		utilisateur.setVille(request.getParameter("ville"));
-		utilisateur.setTelephone("0240515555");
+		utilisateur.setTelephone(request.getParameter("telephone"));
 		utilisateur.setPseudo(request.getParameter("pseudo"));
 
 		UserEm userEm = new UserEm();

@@ -10,4 +10,8 @@ public interface UserDAO {
 	 * @throws BusinessException
 	 */
 	public void insert(User user) throws BusinessException;
+	public void update(User user) throws BusinessException;
+	public boolean checkIsValid(String pseudo, String mail) throws BusinessException;
+	public boolean checkPseudoValidity(String pseudo) throws BusinessException;
+	public boolean checkMailValidity(String mail) throws BusinessException;
 }

@@ -16,7 +16,7 @@ public class UserEm {
 	private static UserDAO userDAO;
 
 	/**
-	 * Le constructeur permet d'initialiser la variable membre dao pour
+	 * Le constructeur permet d'initialiser la variable membre userDAO pour
 	 * permettre une communication avec la base de données.
 	 */
 
@@ -27,17 +27,12 @@ public class UserEm {
 	 public void createUser(User user) throws BusinessException  {
 
 		 BusinessException exception = new BusinessException();
-
-		 if(!exception.hasErreurs())
-		 {
+		 if (userDAO.checkIsValid(user.getPseudo(), user.getEmail())) {
 			 userDAO.insert(user);
 		 }
-
 		 if(exception.hasErreurs())
 		 {
 			 throw exception;
 		 }
 	 }
-
-
 }
