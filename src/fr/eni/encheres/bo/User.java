@@ -19,10 +19,14 @@ public class User implements Serializable {
     private int     credit;
     private boolean administrateur;
 
-
+/*
+* Un premier constructeur vide pour initialisation à vide ( sans parma )
+* */
     public User() {
     }
-
+/*
+* Un deuxiemes constructeur sans "noUtilisateur"  ( ex: pour la création d'un user depuis un formulaire )
+* */
     public User(String pseudo, String nom,String prenom, String email, String telephone,
     		String rue,String codePostal, String ville,String motDePasse,int credit,boolean administrateur) {
         this.pseudo = pseudo;
@@ -37,7 +41,9 @@ public class User implements Serializable {
         this.credit = credit;
         this.administrateur = administrateur;
     }
-
+/*
+* Un troisièmes constructeur avec "noUtilisateur"  ( ex: pour la création d'un user depuis une requet en bbd  )
+* */
     public User(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse,
              int credit, boolean administrateur) {
         this.noUtilisateur = noUtilisateur;

@@ -43,6 +43,28 @@ public class ServletAddUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		User utilisateur = new User();
+		utilisateur.setNom(request.getParameter("nom"));
+		utilisateur.setAdministrateur(true);
+		utilisateur.setCodePostal(request.getParameter("codePostal"));
+		utilisateur.setCredit(16);
+		utilisateur.setEmail(request.getParameter("email"));
+		utilisateur.setPrenom(request.getParameter("nom"));
+		utilisateur.setNom(request.getParameter("prenom"));
+		utilisateur.setMotDePasse(request.getParameter("motDePasse"));
+		utilisateur.setRue(request.getParameter("rue"));
+		utilisateur.setVille(request.getParameter("ville"));
+		utilisateur.setTelephone("0240515555");
+		utilisateur.setPseudo(request.getParameter("pseudo"));
+
+		UserEm userEm = new UserEm();
+		 try {
+			userEm.createUser(utilisateur);
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
+
+		System.out.print(utilisateur+" Objet User ");
 		doGet(request, response);
 	}
 
