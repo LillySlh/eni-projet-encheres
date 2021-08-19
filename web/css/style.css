@@ -1,11 +1,13 @@
 @charset "UTF-8";
 
+html {
+	font-family: sans-serif;
+}
 
 h1 {
 	text-align : left;
 	font-size : 25px;
 	padding-left : 15px;
-	font-family: sans-serif;
 	font:bold;
 }
 
@@ -13,17 +15,32 @@ h2 {
 	text-align : center;
 	font-size : 25px;
 	padding : 15px;
-	font-family: sans-serif;
 	font:bold;
-}
-
-a {
-	font-family: sans-serif;
 }
 
 nav {
 	display: flex;
 	float: right;
+}
+
+input{
+	width: 150px;
+	padding: 4px;
+	vertical-align: middle;
+	font-family: sans-serif;
+}
+
+label {
+	display: inline-block;
+	width: 110px;
+	margin-right: 20px;
+	vertical-align: middle;
+	text-align: right;
+	font-family: sans-serif;
+}
+
+.login-form {
+	display: inline-block;
 }
 
 .inscription{
@@ -42,21 +59,6 @@ nav {
 	padding-bottom: 10px;
 }
 
-input{
-	width: 150px;
-	padding: 4px;
-	vertical-align: middle;
-}
-
-label {
-	display: inline-block;
-	width: 110px;
-	margin-right: 20px;
-	vertical-align: middle;
-	text-align: right;
-	font-family: sans-serif;
-}
-
 .tr-button {
 	column-count: 2;
 	margin: 0 auto;
@@ -69,5 +71,79 @@ label {
 .profil-button {
 	padding-bottom: 20px;
 	padding-right: 50px;
+}
+
+#profil-bt {
+	font-size: 14px;
+	box-shadow: 5px 2px 2px black;
+}
+
+.search {
+	padding-top: 50px;
+}
+
+#search {
+	background-image: url(../images/25306.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	padding-left: 16px;
+	width: 400px;
+	border-radius: 10px;
+}
+
+.lb-search {
+	padding-bottom: 10px;
+}
+
+.search-bar {
+	margin-left: 50px;
+}
+
+.categorie {
+	margin-left: 20px;
+	padding-top: 20px;
+}
+
+.bt-search {
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 10px;
+	height: 150px;
+	padding-bottom: 20px;
+}
+
+#input-search {
+	margin: 0 auto;
+	width: 400px;
+	text-align: center;
+	font-size: 14px;
+	box-shadow: 5px 2px 2px black;
+}
+
+.bt-search-index {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	height: 100px;
+}
+
+#input-search-index {
+	margin: 0 auto;
+	width: 400px;
+	text-align: center;
+	font-size: 14px;
+	box-shadow: 5px 2px 2px black;
+}
+
+.radio-bt {
+	display: flex;
+	justify-content: left;
+	margin-bottom: 5px;
+	column-count: 2;
+}
+
+.lb-radio {
+	margin-right: 5px;
+	font: bold;
 }
 

@@ -1,15 +1,16 @@
 package fr.eni.encheres.servlet;
 
-import fr.eni.encheres.bll.UserEm;
-import fr.eni.encheres.bo.User;
+import fr.eni.encheres.dal.jdbc.LoginJdbc;
 import fr.eni.encheres.exception.BusinessException;
 
-import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Servlet implementation class Login
@@ -22,9 +23,8 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-		this.getServletContext().getRequestDispatcher("/WEB-INF/form/login.jsp").forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/form/login.jsp");
+		rd.forward(request, response);
 
 	}
 
@@ -32,10 +32,27 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pseudo = request.getParameter("pseudo");
-		String motDePasse = request.getParameter("motDePasse");
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
 
-		//TODO
+		String pseudo = request.getParameter("pseudo");
+		String motDePasse =request.getParameter("motDePasse");
+
+		try {
+			if(LoginJdbc.validate(pseudo, motDePasse)){
+				RequestDispatcher rd=request.getRequestDispatcher("/servlet/Home");
+				rd.forward(request,response);
+			}
+			else{
+				out.print("Désolé l'identifiant et/ou le mot de passe est incorrect");
+				RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+				rd.include(request,response);
+			}
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
+
+		out.close();;
 	}
 
 }
