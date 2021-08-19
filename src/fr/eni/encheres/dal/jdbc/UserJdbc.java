@@ -128,6 +128,29 @@ public class UserJdbc implements UserDAO {
 	}
 
 
+	public boolean checkMailValidity(String mail) throws BusinessException {
+
+		boolean isValid = true;
+
+		try(Connection cnx = ConnectionProvider.getConnection()) {
+
+			String CHECK = "SELECT * FROM UTILISATEURS WHERE email LIKE ?;";
+
+			PreparedStatement stmt = cnx.prepareStatement(CHECK);
+			stmt.setString(1, mail);
+			stmt.execute();
+
+			ResultSet rs = stmt.getResultSet();
+
+			if (rs.next()) {
+				isValid = false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return isValid;
+	}
+
 	public boolean checkIsValid(String pseudo, String mail) throws BusinessException {
 
 		boolean isValid = true;
@@ -147,29 +170,6 @@ public class UserJdbc implements UserDAO {
 			}
 		} catch (SQLException e) {
 			System.out.println("C est Quoi"+e);
-			e.printStackTrace();
-		}
-		return isValid;
-	}
-
-	public boolean checkMailValidity(String mail) throws BusinessException {
-
-		boolean isValid = true;
-
-		try(Connection cnx = ConnectionProvider.getConnection()) {
-
-			String CHECK = "SELECT * FROM UTILISATEURS WHERE email LIKE ?;";
-
-			PreparedStatement stmt = cnx.prepareStatement(CHECK);
-			stmt.setString(1, mail);
-			stmt.execute();
-
-			ResultSet rs = stmt.getResultSet();
-
-			if (rs.next()) {
-				isValid = false;
-			}
-		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return isValid;
