@@ -1,5 +1,6 @@
 package fr.eni.encheres.servlet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,9 +19,8 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-		this.getServletContext().getRequestDispatcher("/WEB-INF/form/login.jsp").forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/form/login.jsp");
+		rd.forward(request, response);
 
 	}
 
@@ -28,9 +28,9 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-		//TODO
+	//TODO
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/home.jsp");
+		rd.forward(request, response);
 	}
 
 }

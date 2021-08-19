@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../../WebContent/css/style.css">
+<link rel="stylesheet" href="../../css/style.css">
 <title>Connexion</title>
 </head>
 <body>
-	<%@include file="../fragments/entete.jspf" %>
 	<form action="" method="post">
 		<div class="container">
 			<label for="pseudo">Identifiant : </label>

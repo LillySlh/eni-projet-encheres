@@ -5,6 +5,7 @@ import fr.eni.encheres.bll.UserEm;
 import fr.eni.encheres.bo.User;
 import fr.eni.encheres.exception.BusinessException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,8 +33,8 @@ public class ServletAddUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		this.getServletContext().getRequestDispatcher("/WEB-INF/form/newUser.jsp").forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/form/newUser.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -63,7 +64,8 @@ public class ServletAddUser extends HttpServlet {
 		}
 
 		System.out.print(utilisateur+" Objet User ");
-		doGet(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("/servlet/Home");
+		rd.forward(request, response);
 	}
 
 }
