@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <title>Accueil</title>
 </head>
 <body>
@@ -14,15 +14,12 @@
 <%@include file="WEB-INF/fragments/entete.jspf" %>
 	
 	<h2>Liste des enchères</h2>
-	<form>
+	<form class="container-encheres">
 		<div class="search">
 			<label for="search" class="lb-search">Filtres :</label>
 			<div class="search-bar">
-			<input type="search" value="  Le nom de l'article contient" id="search">
+				<input type="search" value="  Le nom de l'article contient" id="search">
 			</div>
-		</div>
-		<div class="bt-search">
-			<input type="submit" value="Rechercher">
 		</div>
 		<div class="categorie">
 			<label for="categorie-select">Catégorie :</label>
@@ -33,6 +30,9 @@
 				<option value="vetelents">Vêtements</option>
 				<option value="sports&loisir">Sports & Loisirs</option>
 			</select>
+			<div class="bt-search-index">
+				<input type="submit" value="Rechercher"  id="input-search-index">
+			</div>
 		</div>
 	</form>
 </body>

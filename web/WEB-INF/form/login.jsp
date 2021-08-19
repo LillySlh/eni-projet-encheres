@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
 <title>Connexion</title>
 </head>
 <body>
+<%--le css fonctionnait au debut et n'a plus fonctionné d'un coup sans raison apparente--%>
 	<form action="" method="post">
 		<div class="login-form">
 			<label for="pseudo">Identifiant : </label>

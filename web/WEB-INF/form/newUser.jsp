@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
 <title>Nouveau profil</title>
 </head>
 <body>
@@ -72,10 +72,10 @@
 
 		<div class="tr-button">
 			<div class="profil-button">
-				<input type="submit" value="Créer">
+				<input type="submit" id="profil-bt" value="Créer">
 			</div>
 			<div class="profil-button">
-				<input type="button" value="Annuler" onclick="window.location.href = '${pageContext.request.contextPath}/../../../../eni_projet_encheres_war_exploded'">
+				<input type="button" id="profil-bt" value="Annuler" onclick="window.location.href = '${pageContext.request.contextPath}/../../../../eni_projet_encheres_war_exploded'">
 			</div>
 		</div>
 	</form>
