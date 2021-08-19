@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class SoldItem  implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private int noArticle;
     private String nomArticle;
@@ -21,6 +22,19 @@ public class SoldItem  implements Serializable {
 
     public SoldItem(String nomArticle,String description,Date dateDebutEncheres,Date dateFinEncheres,int prixInitial,int prixVente,
              String etatVente,int noUtilisateur,int noCategorie) {
+        this.nomArticle = nomArticle;
+        this.description = description;
+        this.dateDebutEncheres = dateDebutEncheres;
+        this.dateFinEncheres = dateFinEncheres;
+        this.prixInitial = prixInitial;
+        this.prixVente = prixVente;
+        this.etatVente = etatVente;
+        this.noUtilisateur = noUtilisateur;
+        this.noCategorie = noCategorie;
+    }
+    public SoldItem(int noArticle, String nomArticle, String description, Date dateDebutEncheres, Date dateFinEncheres,int prixInitial,
+                    int prixVente, String etatVente,int noUtilisateur,int noCategorie) {
+        this.noArticle = noArticle;
         this.nomArticle = nomArticle;
         this.description = description;
         this.dateDebutEncheres = dateDebutEncheres;

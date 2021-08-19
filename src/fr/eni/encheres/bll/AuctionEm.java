@@ -5,12 +5,18 @@ import fr.eni.encheres.dal.dao.AuctionDAO;
 import fr.eni.encheres.exception.BusinessException;
 
 public class AuctionEm {
-    private static AuctionDAO dao;
+    private static AuctionDAO auctionDAO ;
 
     public void createAuction(Auction auction) throws BusinessException  {
-        dao.insert(auction);
-    }
+        BusinessException exception = new BusinessException();
 
+        if(!exception.hasErreurs())
+        {
+            auctionDAO.insert(auction);
+        }else{
+            throw exception;
+        }
+    }
 
 
 
