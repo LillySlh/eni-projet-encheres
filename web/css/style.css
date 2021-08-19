@@ -26,6 +26,10 @@ nav {
 	float: right;
 }
 
+.login-form {
+	display: inline-block;
+}
+
 .inscription{
 	column-count: 2;
 	display: flex;
@@ -46,6 +50,7 @@ input{
 	width: 150px;
 	padding: 4px;
 	vertical-align: middle;
+	font-family: sans-serif;
 }
 
 label {
@@ -71,3 +76,35 @@ label {
 	padding-right: 50px;
 }
 
+.search {
+	padding-top: 50px;
+}
+
+#search {
+	background-image: url(../images/25306.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	padding-left: 16px;
+	width: 400px;
+	border-radius: 10px;
+}
+
+.lb-search {
+	padding-bottom: 10px;
+}
+
+.search-bar {
+	margin-left: 50px;
+}
+
+.categorie {
+	margin-left: 20px;
+	padding-top: 20px;
+}
+
+.bt-search {
+	width: 600px;
+	height: 100px;
+	display: inline-flex;
+	float: right;
+}

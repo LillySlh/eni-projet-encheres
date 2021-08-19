@@ -9,7 +9,7 @@
 </head>
 <body>
 	<form action="" method="post">
-		<div class="container">
+		<div class="login-form">
 			<label for="pseudo">Identifiant : </label>
 			<input type="text" name="pseudo" id="pseudo"required>
 			<br>

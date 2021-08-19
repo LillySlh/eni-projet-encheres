@@ -48,7 +48,7 @@ public class ServletAddUser extends HttpServlet {
 		utilisateur.setNom(request.getParameter("nom"));
 		utilisateur.setPrenom(request.getParameter("prenom"));
 		utilisateur.setEmail(request.getParameter("email"));
-		utilisateur.setTelephone("0240515555");
+		utilisateur.setTelephone("telephone");
 		utilisateur.setRue(request.getParameter("rue"));
 		utilisateur.setCodePostal(request.getParameter("codePostal"));
 		utilisateur.setVille(request.getParameter("ville"));
