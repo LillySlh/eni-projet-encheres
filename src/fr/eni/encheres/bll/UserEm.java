@@ -6,8 +6,7 @@ import fr.eni.encheres.dal.dao.UserDAO;
 import fr.eni.encheres.exception.BusinessException;
 
 /**
- *
- *
+
  * Cette classe permet d'effectuer les traitements attendus sur la classe User
  */
 
@@ -27,6 +26,7 @@ public class UserEm {
 	 public void createUser(User user) throws BusinessException  {
 
 		 BusinessException exception = new BusinessException();
+
 		 if (userDAO.checkIsValid(user.getPseudo(), user.getEmail()))
 		 {
 			 userDAO.insert(user);

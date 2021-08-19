@@ -141,4 +141,5 @@ public class SoldItem  implements Serializable {
                 ", noCategorie=" + noCategorie +
                 '}';
     }
+
 }

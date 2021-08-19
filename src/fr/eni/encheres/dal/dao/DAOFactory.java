@@ -9,9 +9,5 @@ public abstract class DAOFactory {
     {
         return new UserJdbc();
     }
-    public static SoldItemDAO getSoldItemDAO() {
-
-        return new SoldeItemJdbc();
-    }
-
+    public static SoldItemDAO getSoldItemDAO() {return new SoldeItemJdbc();}
 }

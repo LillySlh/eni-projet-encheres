@@ -9,6 +9,6 @@ public interface SoldItemDAO {
      * @param soldItem
      * @throws BusinessException
      */
-    public void insert(SoldItem soldItem) throws BusinessException;
+    public void insertSoldItem(SoldItem soldItem) throws BusinessException;
 
 }

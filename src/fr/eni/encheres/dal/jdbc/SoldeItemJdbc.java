@@ -11,7 +11,7 @@ import java.sql.*;
 
 public class SoldeItemJdbc implements SoldItemDAO {
     @Override
-    public void insert(SoldItem soldItem) throws BusinessException {
+    public void insertSoldItem(SoldItem soldItem) throws BusinessException {
 
         if (soldItem == null) {
             BusinessException businessException = new BusinessException();
@@ -20,9 +20,8 @@ public class SoldeItemJdbc implements SoldItemDAO {
         }
         try(Connection cnx = ConnectionProvider.getConnection())
     {
-            String INSERT = "INSERT INTO ARTICLES_VENDUS " +
-                    "(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, etat_vente, no_utilisateur, no_categorie) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        System.out.println("OUIII ça s'passe bien :D");
+        String INSERT = "INSERT INTO ARTICLES_VENDUS(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pstmt = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
         pstmt.setString(1, soldItem.getNomArticle());
         pstmt.setString(2, soldItem.getDescription());
@@ -30,9 +29,8 @@ public class SoldeItemJdbc implements SoldItemDAO {
         pstmt.setObject(4,new Timestamp(soldItem.getDateFinEncheres().getTime() ) );
         pstmt.setInt(5, soldItem.getPrixInitial());
         pstmt.setInt(6, soldItem.getPrixVente());
-        pstmt.setString(7, soldItem.getEtatVente());
-        pstmt.setInt(8, soldItem.getNoUtilisateur());
-        pstmt.setInt(9, soldItem.getNoCategorie());
+        pstmt.setInt(7, soldItem.getNoUtilisateur());
+        pstmt.setInt(8, soldItem.getNoCategorie());
 
 
         pstmt.executeUpdate();
